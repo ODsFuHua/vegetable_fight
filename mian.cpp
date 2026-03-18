@@ -14,6 +14,7 @@ while(true)
 
     while (peekmessage(&msg))
     {
+        
 
     }
 
