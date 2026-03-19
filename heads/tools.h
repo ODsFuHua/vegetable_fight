@@ -1,5 +1,6 @@
 #pragma once
 #include <graphics.h>
+#include <Atlas.h>
 
 inline void flip_image(IMAGE* be, IMAGE* af) {
 	int w = be->getwidth();
@@ -13,5 +14,14 @@ inline void flip_image(IMAGE* be, IMAGE* af) {
 			int s_num_af = y * w + (w - x - 1);
 			af_buffer[s_num_af] = be_buffer[s_num_be];
 		}
+	}
+}
+
+inline void flip_atlas(Atlas& be, Atlas& af) {
+	af.clear();
+	for (int i = 0; i < be.get_size(); i++) {
+		IMAGE img_flipped;
+		flip_image(be.get_image(i), &img_flipped);
+		af.add_image(img_flipped);
 	}
 }
