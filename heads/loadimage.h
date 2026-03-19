@@ -1,6 +1,7 @@
 #pragma once
 #include <graphics.h>
 #include <Atlas.h>
+#include <tools.h>
 
 IMAGE img_menu_background;
 IMAGE img_vs;
@@ -69,3 +70,18 @@ IMAGE img_win_background;
 
 IMAGE img_peashooter_avatar;
 IMAGE img_sunflower_avatar;
+
+inline void load_resource() {
+	AddFontResourceEx(_T("art_resource/IPix.ttf"), FR_PRIVATE, NULL);
+
+	loadimage(&img_menu_background, _T("art_resource/menu_background.png"));
+	loadimage(&img_VS, _T("art_resource/VS.png"));
+	loadimage(&img_1P, _T("art_resource/1P.png"));
+	loadimage(&img_2P, _T("art_resource/2P.png"));
+	loadimage(&img_gravestone_left, _T("art_resource/gravestone.png"));
+	flip_image(&img_gravestone_right, &img_gravestone_left);
+	loadimage(&img_selector_tip, _T("art_resource/selector_tip.png"));
+	loadimage(&img_selector_background, _T("art_resource/selector_background.png"));
+	loadimage(&img_1P_selector_botton_up_left, _T("art_resource/selector_botton_up.png"));
+	
+}
