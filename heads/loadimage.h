@@ -121,5 +121,37 @@ inline void load_resource() {
 	flip_atlas(atlas_sunflower_die_right, atlas_sunflower_die_left);
 
 	loadimage(&img_pea, _T("art_resource/pea.png"));
+	atlas_pea_break.load_from_file(_T("art_resource/pea_break_%d.png"), 3);
+	atlas_sun.load_from_file(_T("art_resource/sun_%d.png"), 5);
+	atlas_sun_explode.load_from_file(_T("art_resource/sun_explode_%d.png"), 5);
+	atlas_sun_ex.load_from_file(_T("art_resource/sun_ex_%d.png"), 5);
+	atlas_sun_ex_explode.load_from_file(_T("art_resource/sun_ex_explode_%d.png"), 5);
+	atlas_sun_text.load_from_file(_T("art_resource/sun_text_%d.png"), 6);
+
+	atlas_run_effect.load_from_file(_T("art_resource/run_effect_%d.png"), 4);
+	atlas_jump_effect.load_from_file(_T("art_resource/jump_effect_%d.png"), 5);
+	atlas_land_effect.load_from_file(_T("art_resource/land_effect_%d.png"), 2);
+
+	loadimage(&img_1P_win, _T("art_resource/1P_win.png"));
+	loadimage(&img_2P_win, _T("art_resource/2P_win.png"));
+	loadimage(&img_win_background, _T("art_resource/win_background.png"));
+
+	loadimage(&img_peashooter_avatar, _T("art_resource/peashooter_avatar.png"));
+	loadimage(&img_sunflower_avatar, _T("art_resource/sunflower_avatar.png"));
+
+	mciSendString(_T("art_resource/bgm_game.mp3 alias bgm_game"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/bgm_menu.mp3 alias bgm_menu"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/pea_break_1.mp3 alias pea_break_1"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/pea_break_2.mp3 alias pea_break_2"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/pea_break_3.mp3 alias pea_break_3"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/pea_shoot_1.mp3 alias pea_shoot_1"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/pea_shoot_2.mp3 alias pea_shoot_2"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/pea_shoot_ex.mp3 alias pea_shoot_ex"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/sun_explode.mp3 alias sun_explode_2"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/sun_explode_ex.mp3 alias sun_explode_ex"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/sun_text.mp3 alias sun_text"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/ui_confirm.wav alias ui_confirm"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/ui_switch.wav alias ui_switch"), NULL, 0, NULL);
+	mciSendString(_T("art_resource/ui_win.wav alias ui_win"), NULL, 0, NULL);
 
 }
