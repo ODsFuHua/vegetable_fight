@@ -67,4 +67,5 @@ private:
 	bool is_loop - true;
 	Atlas* atlas = nullptr;
 	std::function<void()> callback;
+
 };
