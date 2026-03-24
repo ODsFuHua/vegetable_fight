@@ -2,6 +2,7 @@
 #include <graphics.h>
 #include <Atlas.h>
 #include <tools.h>
+#pragma comment(lib,"Winmm.lib")
 
 IMAGE img_menu_background;
 IMAGE img_vs;
