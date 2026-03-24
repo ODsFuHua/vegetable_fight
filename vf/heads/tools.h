@@ -1,5 +1,7 @@
 #pragma once
 #include <graphics.h>
+#include "Atlas.h"
+#pragma comment(lib,"MSIMA32.LIB")
 
 inline void flip_image(IMAGE* be, IMAGE* af) {
 	int w = be->getwidth();
@@ -14,4 +16,20 @@ inline void flip_image(IMAGE* be, IMAGE* af) {
 			af_buffer[s_num_af] = be_buffer[s_num_be];
 		}
 	}
+}
+
+inline void flip_atlas(Atlas& be, Atlas& af) {
+	af.clear();
+	for (int i = 0; i < be.get_size(); i++) {
+		IMAGE img_flipped;
+		flip_image(be.get_image(i), &img_flipped);
+		af.add_image(img_flipped);
+	}
+}
+
+inline void putimage_alpha(int dst_x, int dst_y, IMAGE* img) {
+	int w = img->getwidth();
+	int h = img->getheight();
+	AlphaBlend(GetImageHDC(GetWorkingImage()), dst_x, dst_y, w, h, 
+		GetImageHDC(img), 0, 0, w, h, { AC_SRC_OVER,0,255,AC_SRC_ALPHA });
 }
