@@ -14,7 +14,7 @@ public:
     {
         std::cout<<"进入游戏场景"<<std::endl;
     }
-    virtual void on_update() 
+    virtual void on_update(int delta) 
     {
         std::cout<<"更新游戏场景"<<std::endl;
     }
